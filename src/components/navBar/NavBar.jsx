@@ -6,9 +6,6 @@ import ButtonEmpleados from "../ButtonEmpleados";
 const NavBar = () => {
   return (
     <nav>
-      <div>
-        <img src="" alt="" />
-      </div>
       <ButtonEmpleados />
     </nav>
   );
