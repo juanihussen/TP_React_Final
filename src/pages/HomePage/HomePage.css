@@ -1,0 +1,35 @@
+
+.homeContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+
+.seccion{
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  border-radius: 0 5% 5% 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+.infoContainer{
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border-radius: 0 5% 5% 0;
+  width: 20rem;
+}
+
+.infoContainer h2{
+  text-align: center;
+}
+
+.infoContainer p{
+  margin-left: 5px;
+}
+
+img{
+  height: 20rem;
+}
+
