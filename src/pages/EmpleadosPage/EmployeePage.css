@@ -1,71 +1,110 @@
-/* EmployeePage.css */
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
-section{
+.employeeSection {  
   height: 100vh;
-  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  display: flex;
+  background-image: url("./img/fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  
+}
+
+.employeeSection h1{
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 5rem;
+  margin-top: 20px;
+  font-weight: 400;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 4rem; 
 }
 
 .employeeContainer {
   display: flex;
   flex-direction: column;
-  font-family: 'Arial', sans-serif;
+  margin-bottom: 20px;
 }
 
 .content {
-  margin-top: 60px; 
   flex: 1;
-  background-color: #f4f7f6;
+  background-color: transparent;
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 14px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.5rem; 
 }
 
+.contentHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
 .employeeContainer h2 {
-  color: black;
-  padding-bottom: 10px;
+  color: white;
+  padding: 20px 0 20px 20px;
   margin-bottom: 20px;
+  font-weight: 300;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-table, th, td {
-  border: 1px solid #ddd;
+  border: 2px solid rgba(255, 255, 255, 0.8); 
 }
 
 th, td {
   padding: 10px;
-  text-align: left;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.6); 
 }
+
 td {
-  color: black;
+  color: white;
+  font-weight: 350;
 }
 
 th {
-  background-color: #007bff;
+  background-color: transparent;
   color: white;
+  font-weight: 1000;
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: transparent;
 }
 
 button {
-  background-color: #007bff;
-  color: white;
-  border: none;
   border-radius: 5px;
-  padding: 10px 15px;
   cursor: pointer;
   margin: 5px;
   transition: background-color 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.8); 
+  background-color: transparent;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: white;
+  color: black;
+}
+
+
+
+#addButtonImagen{
+  border-radius: 100px;
+}
+
+#botonEliminar:hover{
+  color: red;
+}
+#botonModificar:hover{
+  color: #007bff;
 }
 
 .modal {
@@ -88,6 +127,11 @@ button:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.modal-content h2{
+  color: black;
+  text-align: center;
+}
+
 .modal-content h3 {
   margin-top: 0;
   color: #333;
@@ -95,18 +139,30 @@ button:hover {
 
 input, select {
   width: calc(100% - 20px);
+  color: black;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
 
+input {
+  color: black; 
+}
+
+label {
+  color: black; 
+}
+
 select {
-  background-color: black;
+  background-color: #E5DDC5;
+  color: #333;
 }
 
 input[type="date"] {
   padding: 8px;
+  color: black;
+  background-color: #E5DDC5;
 }
 
 @media (max-width: 768px) {
@@ -114,6 +170,7 @@ input[type="date"] {
     width: 90%;
   }
 }
+
 
 
 

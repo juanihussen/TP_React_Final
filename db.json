@@ -1,7 +1,14 @@
 {
-    "employees": [
-      { "id": 1, "name": "John Doe", "position": "Developer" },
-      { "id": 2, "name": "Jane Smith", "position": "Designer" }
-    ]
-  }
-  
+  "employees": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "dsa",
+      "email": "john.doe@example.com",
+      "dni": "12345678",
+      "birthDate": "1990-01-01",
+      "jobType": "oficina",
+      "position": "Desarrollador de Software"
+    }
+  ]
+}

@@ -23,26 +23,30 @@ const LoginPage = () => {
     <section className={styles.loginSection}>
       <div className={styles.loginContainer}>
         <h2>Login</h2>
-        <form onSubmit={handleLogin}>
-          <div>
+        <form onSubmit={handleLogin} className={styles.form}>
+          <div className={styles.inputGroup}>
             <label>Username : </label>
             <input
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
+              className={styles.input}
             />
           </div>
-          <div>
+          <div className={styles.inputGroup}>
             <label>Password : </label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              className={styles.input}
             />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit" className={styles.button}>
+            Login
+          </button>
         </form>
       </div>
     </section>

@@ -1,19 +1,26 @@
+  .loginSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./img/blur-hospital-clinic-interior.jpg");
+    background-size: cover;
+    background-position: center;
+    color: black;
+  }
 
-.loginSection{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100wh;
-  height: 100vh;
-  background-color: white;
-}
-
-.loginContainer {
+  .loginContainer {
     text-align: center;
-    padding: 25px;
-    background-color: rgb(60, 60, 60); 
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.19);
+    padding: 55px 225px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 28px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px); 
+  }
+
+  .loginContainer h2{
+    font-size: 3rem;
   }
   
   form {
@@ -24,6 +31,8 @@
   input {
     margin-bottom: 10px;
     padding: 8px;
+    background-color: white ;
+    color: black;
   }
   
   button {
@@ -39,10 +48,10 @@
       align-items:baseline;
     }
     .loginContainer {
-      width: 100%;
+      padding: 0 15%;
       height: 100%;
+      width: 100%;
       border-radius: 0;
-
     }
   }
   

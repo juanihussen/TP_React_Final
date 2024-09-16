@@ -1,0 +1,93 @@
+.homeSection{
+  height: 100%;
+  width: 100%;
+  background-image: url("./img/fondoHome.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.homeContainer{
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  gap: 4rem;
+}
+
+.homeContainer h1{
+  text-align: center;
+  font-size: 10rem;
+  font-weight: 100;
+  color: black;
+}
+
+.cardsContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.card{
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  border-radius: 0 5% 5% 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+.infoContainer{
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border-radius: 0 5% 5% 0;
+  width: 20rem;
+}
+
+.infoContainer h2{
+  text-align: center;
+}
+
+.infoContainer p{
+  margin-left: 5px;
+}
+
+img{
+  height: 20rem;
+}
+
+
+@media (max-width: 768px) {
+  .homeContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .homeContainer h1{
+    text-align: center;
+    font-size: 2rem;
+    color: black;
+  }
+
+  .card{
+    flex-direction: column;
+    border-radius: 0 0 5% 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.19);
+  }
+  
+  .infoContainer{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 0 0 5% 5%;
+    width: 100%;
+    height: 20rem;
+    text-align: center;
+  }
+
+  .fotoOfi{
+    height: 15rem;
+  }
+
+  .construccion{
+    height: 15rem;
+  }
+}
