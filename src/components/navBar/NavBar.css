@@ -1,39 +1,30 @@
 nav {
   display: flex;
-  justify-content:end;
+  justify-content: center;
+  gap: 50rem;
   align-items: center;
   background: transparent;
-  padding: 30px 0;
-  padding-right: 10rem;
-  color: black;
+  padding: 15px 0;
   position: fixed;
+  z-index: 1;
   width: 100%;
   top: 0;
-  z-index: 1000;
 }
 
 button {
-  background-color: orange;
   color: white;
   font-size: 1rem;
   cursor: pointer;
-  padding: 5px 10px;
   transition: color 0.3s ease, background-color 0.3s ease;
   text-align: center;
 }
 
-button:hover {
-  color: #ff7e5f;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 5px; 
-}
-
 @media (max-width: 768px) {
   nav {
+    background-color: #040D12;
     justify-content:center;
+    gap: 3rem;
   }
-
-
 }
 
  

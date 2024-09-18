@@ -17,8 +17,8 @@
     margin-bottom: 1rem;
   }
   
-  .not-found a {
-    color: #007bff;
+  .not-found a { 
+    color: #333;
     text-decoration: none;
   }
   

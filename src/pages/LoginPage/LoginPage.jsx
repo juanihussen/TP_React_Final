@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import styles from "./styles.module.css";
+import styles from "./LoginPage.module.css";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -11,11 +11,12 @@ const LoginPage = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+
     if (username === "admin" && password === "1234") {
       login();
       navigate("/");
     } else {
-      alert("Usuario inexistente");
+      alert("Usuario o contraseña incorrecta");
     }
   };
 
@@ -25,7 +26,7 @@ const LoginPage = () => {
         <h2>Login</h2>
         <form onSubmit={handleLogin} className={styles.form}>
           <div className={styles.inputGroup}>
-            <label>Username : </label>
+            <label className={styles.label}>Username : </label>
             <input
               type="text"
               value={username}
@@ -35,7 +36,7 @@ const LoginPage = () => {
             />
           </div>
           <div className={styles.inputGroup}>
-            <label>Password : </label>
+            <label className={styles.label}>Password : </label>
             <input
               type="password"
               value={password}

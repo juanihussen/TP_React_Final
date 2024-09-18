@@ -1,5 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import useForm from "../../hooks/useForm";
+import {
+  validateOnlyLetters,
+  validateOnlyNumbers,
+  validateEmail,
+  validateNotEmpty,
+} from "../../helpers/validations";
 
 const AddEmployeeModal = ({ show, onClose, onAdd }) => {
   const [formValues, handleChange, resetForm] = useForm({
@@ -12,10 +18,32 @@ const AddEmployeeModal = ({ show, onClose, onAdd }) => {
     position: "Desarrollador de Software",
   });
 
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    newErrors.firstName =
+      validateNotEmpty(formValues.firstName) ||
+      validateOnlyLetters(formValues.firstName);
+    newErrors.lastName =
+      validateNotEmpty(formValues.lastName) ||
+      validateOnlyLetters(formValues.lastName);
+    newErrors.email =
+      validateNotEmpty(formValues.email) || validateEmail(formValues.email);
+    newErrors.dni = validateOnlyNumbers(formValues.dni);
+    newErrors.position = validateOnlyLetters(formValues.position);
+
+    setErrors(newErrors);
+    return Object.values(newErrors).every((error) => error === "");
+  };
+
   const handleSubmit = () => {
-    onAdd(formValues);
-    resetForm();
-    onClose();
+    if (validateForm()) {
+      onAdd(formValues);
+      resetForm();
+      onClose();
+    }
   };
 
   if (!show) return null;
@@ -36,6 +64,9 @@ const AddEmployeeModal = ({ show, onClose, onAdd }) => {
               value={formValues.firstName}
               onChange={handleChange}
             />
+            {errors.firstName && (
+              <span className="error">{errors.firstName}</span>
+            )}
           </label>
           <label>
             Apellido:
@@ -45,6 +76,9 @@ const AddEmployeeModal = ({ show, onClose, onAdd }) => {
               value={formValues.lastName}
               onChange={handleChange}
             />
+            {errors.lastName && (
+              <span className="error">{errors.lastName}</span>
+            )}
           </label>
           <label>
             Email:
@@ -54,6 +88,7 @@ const AddEmployeeModal = ({ show, onClose, onAdd }) => {
               value={formValues.email}
               onChange={handleChange}
             />
+            {errors.email && <span className="error">{errors.email}</span>}
           </label>
           <label>
             DNI:
@@ -63,6 +98,7 @@ const AddEmployeeModal = ({ show, onClose, onAdd }) => {
               value={formValues.dni}
               onChange={handleChange}
             />
+            {errors.dni && <span className="error">{errors.dni}</span>}
           </label>
           <label>
             Fecha de Nacimiento:
@@ -81,7 +117,7 @@ const AddEmployeeModal = ({ show, onClose, onAdd }) => {
               onChange={handleChange}
             >
               <option value="oficina">Oficina</option>
-              <option value="campo">Campo</option>
+              <option value="Remoto">Remoto</option>
             </select>
           </label>
           <label>
@@ -92,6 +128,9 @@ const AddEmployeeModal = ({ show, onClose, onAdd }) => {
               value={formValues.position}
               onChange={handleChange}
             />
+            {errors.position && (
+              <span className="error">{errors.position}</span>
+            )}
           </label>
           <button type="button" onClick={handleSubmit}>
             Agregar

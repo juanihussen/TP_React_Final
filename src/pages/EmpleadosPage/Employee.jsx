@@ -35,8 +35,9 @@ const EmployeePage = () => {
   return (
     <section className="employeeSection">
       <NavBar />
-      <h1>Employee Managment </h1>
+
       <div className="employeeContainer">
+        <h1>Employee Managment </h1>
         <div className="content">
           <div className="contentHeader">
             <h2>Empleados</h2>
@@ -71,8 +72,11 @@ const EmployeePage = () => {
                     <td>{employee.birthDate}</td>
                     <td>{employee.jobType}</td>
                     <td>{employee.position}</td>
-                    <td>
-                      <button onClick={() => handleDeleteEmployee(employee.id)}>
+                    <td className="botonesTabla">
+                      <button
+                        className="botonEliminar"
+                        onClick={() => handleDeleteEmployee(employee.id)}
+                      >
                         Eliminar
                       </button>
                       <button onClick={() => handleEditEmployee(employee)}>
@@ -87,7 +91,6 @@ const EmployeePage = () => {
         </div>
       </div>
 
-      {/* Modales */}
       <AddEmployeeModal
         show={showAddModal}
         onClose={() => setShowAddModal(false)}

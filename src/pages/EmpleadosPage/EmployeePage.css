@@ -7,10 +7,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("./img/fondo.jpg");
-  background-size: cover;
+
+  background-size: 120%;
+  background-repeat: no-repeat;
   background-position: center;
-  
 }
 
 .employeeSection h1{
@@ -18,25 +18,14 @@
   font-size: 5rem;
   margin-top: 20px;
   font-weight: 400;
-  font-family: 'Patrick Hand', cursive;
   font-size: 4rem; 
 }
 
 .employeeContainer {
+  text-align: center;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-}
-
-.content {
-  flex: 1;
-  background-color: transparent;
-  width: 100%;
-  padding: 15px;
-  border-radius: 15px;
-  box-shadow: 0 14px 8px rgba(0, 0, 0, 0.1);
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.5rem; 
 }
 
 .contentHeader{
@@ -45,6 +34,16 @@
   align-items: center;
 }
 
+.content {
+  flex: 1;
+  background-color: transparent;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.contentHeader h2{
+  margin-right: 5rem;
+}
 
 .employeeContainer h2 {
   color: white;
@@ -59,6 +58,10 @@ table {
   border: 2px solid rgba(255, 255, 255, 0.8); 
 }
 
+table button {
+  margin-right: 0;
+}
+
 th, td {
   padding: 10px;
   text-align: center;
@@ -68,6 +71,13 @@ th, td {
 td {
   color: white;
   font-weight: 350;
+}
+
+.botonesTabla{
+  display: flex;
+  gap: 1rem;
+  font-size: 1.3rem;
+  border: none; 
 }
 
 th {
@@ -83,18 +93,16 @@ tbody tr:nth-child(even) {
 button {
   border-radius: 5px;
   cursor: pointer;
-  margin: 5px;
   transition: background-color 0.3s ease;
   border: 2px solid rgba(255, 255, 255, 0.8); 
   background-color: transparent;
 }
 
+
 button:hover {
   background-color: white;
   color: black;
 }
-
-
 
 #addButtonImagen{
   border-radius: 100px;
@@ -103,6 +111,7 @@ button:hover {
 #botonEliminar:hover{
   color: red;
 }
+
 #botonModificar:hover{
   color: #007bff;
 }
@@ -117,6 +126,18 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.modal button {
+  color: black;
+  border-color: black;
+  background-color: white;
+  width: 100%;
+}
+
+.modal button:hover {
+  color: white;
+  background-color: black;
 }
 
 .modal-content {
@@ -137,40 +158,101 @@ button:hover {
   color: #333;
 }
 
-input, select {
+.close{
+  color: black;
+  font-size: 2rem;
+}
+.close:hover{
+  cursor: pointer;
+}
+
+.modal input, select{
   width: calc(100% - 20px);
   color: black;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ddd;
   border-radius: 5px;
-}
-
-input {
-  color: black; 
-}
-
-label {
-  color: black; 
-}
+} 
 
 select {
-  background-color: #E5DDC5;
+  width: 100%;
+  background-color: whitesmoke;
   color: #333;
+}
+
+.modal label {
+  color: black; 
 }
 
 input[type="date"] {
   padding: 8px;
   color: black;
-  background-color: #E5DDC5;
+  background-color: whitesmoke;
 }
 
 @media (max-width: 768px) {
-  .modal-content {
-    width: 90%;
+  .employeeSection {  
+    height: auto; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
   }
+
+  .employeeContainer{
+    margin-top: 10rem;
+  }
+
+  .content {
+    border-radius: 15px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1rem; 
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+    height: fit-content;
+  }
+
+  .botonesTabla{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    font-size: 1.2rem;
+    border: none; 
+  }
+
+  table{
+    border: 0; 
+  }
+
+  tr {
+    border: 4px solid rgb(255, 255, 255);
+    font-size: 1.5rem;
+    border-radius: 15px; 
+    margin-bottom: 5rem;
 }
 
+  th {
+    display: none;
+  }
+
+  .modal {
+    width: 100%;
+    height: 100%;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+  }
+
+  .modal h2{
+    margin-block-start: 0;
+  }
+
+}
 
 
 
